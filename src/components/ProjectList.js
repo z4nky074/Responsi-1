@@ -24,8 +24,6 @@ const ProjectList = () => {
   const [uploadMode, setUploadMode] = useState('url'); // Default ke URL
   const [modalProject, setModalProject] = useState(null); // State untuk menyimpan proyek yang diklik untuk modal
 
-  const timelineRef = useRef([]); // Menyimpan referensi ke elemen timeline
-
   useEffect(() => {
     // IntersectionObserver untuk timeline
     const timelineObserver = new IntersectionObserver(
@@ -38,12 +36,6 @@ const ProjectList = () => {
       },
       { threshold: 0.5 }
     );
-
-    timelineRef.current.forEach((item) => {
-      if (item) {
-        timelineObserver.observe(item);
-      }
-    });
 
     return () => timelineObserver.disconnect();
   }, []);
@@ -200,24 +192,6 @@ const ProjectList = () => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="timeline-section">
-        <h4 className="text-center mb-4">My Timeline</h4>
-        <div className="timeline">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="timeline-item"
-              ref={(el) => (timelineRef.current[index] = el)}
-            >
-              <div className="timeline-icon"></div>
-              <div className="timeline-content">
-                <h5>{project.description}</h5>
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
