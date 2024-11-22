@@ -33,7 +33,6 @@ body {
   border-radius: 50%;
 }
 
-
 /* Header dengan gambar latar belakang */
 header {
   background-image: linear-gradient(
@@ -200,23 +199,32 @@ footer p {
   transition: width 0.5s ease-in-out;
 }
 
-/* Timeline */
 .timeline {
   position: relative;
+  margin: 50px 0;
 }
 
 .timeline-item {
   position: relative;
-  padding-left: 40px;
-  margin-bottom: 20px;
+  padding-left: 50px; /* Pastikan cukup ruang untuk ikon timeline */
+  margin-bottom: 30px; /* Tambahkan jarak antar item */
+  opacity: 0; /* Awal animasi: elemen tidak terlihat */
+  transform: translateY(20px); /* Awal animasi: elemen bergeser sedikit ke bawah */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Animasi transisi */
+}
+
+.timeline-item.animate {
+  opacity: 1; /* Elemen terlihat */
+  transform: translateY(0); /* Kembali ke posisi semula */
 }
 
 .timeline-icon {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 10px; /* Sesuaikan posisi agar ikon tetap pada tempatnya */
   width: 30px;
   height: 30px;
+  background-color: #007bff; /* Warna ikon biru */
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -228,67 +236,8 @@ footer p {
   padding: 15px;
   border-radius: 5px;
   border-left: 3px solid #007bff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan lembut */
 }
-
-/* Animasi timeline */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Animasi skill bars */
-@keyframes skillAnimation {
-  from {
-    width: 0%;
-  }
-  to {
-    width: var(--skill-width); /* Menggunakan nilai skill yang dinamis */
-  }
-}
-
-.skill-bar {
-  height: 12px;
-  background-color: #007bff;
-  border-radius: 10px;
-  width: 0%; /* Mulai dengan lebar 0% */
-  transition: width 2s ease-out;
-}
-
-/* Kelas yang ditambahkan saat skill bar muncul di layar */
-.skill-bar.animate {
-  animation: skillAnimation 2s ease-out forwards;
-}
-
-/* Animasi timeline item muncul dari bawah */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px); /* Mulai dari bawah */
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0); /* Berhenti di posisi semula */
-  }
-}
-
-/* Gaya dasar untuk item timeline */
-.timeline-item {
-  opacity: 0; /* Mulai dengan opasitas 0 */
-  transform: translateY(20px); /* Mulai dari bawah */
-  animation: fadeInUp 0.8s ease-out forwards; /* Animasi timeline */
-}
-
-/* Kelas yang ditambahkan saat timeline item muncul di layar */
-.timeline-item.animate {
-  animation: fadeInUp 1s ease-out forwards; /* Menambahkan animasi */
-}
-
 
 /* Typing Text Effect */
 .typing-text {
@@ -621,3 +570,4 @@ body, html {
     transform: scale(1);
   }
 }
+
