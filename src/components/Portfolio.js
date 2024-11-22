@@ -12,14 +12,14 @@ const skills = [
 
 const experiences = [
   {
-    title: "Web Developer at Company XYZ",
-    date: "Jan 2023 - Present",
-    description: "Developed and maintained websites using React, CSS, and JavaScript.",
+    title: "PKL Di Rumah Mesin Sebagai SEO Engineer.",
+    date: "April 2022 - September 2022",
+    description: "Bekerja di bidang SEO Engineer.",
   },
   {
-    title: "Frontend Developer Intern",
-    date: "June 2022 - Dec 2022",
-    description: "Collaborated with the front-end team to create responsive web pages using HTML, CSS, and JavaScript.",
+    title: "Sekolah di Jurusan RPL.",
+    date: "Juni 2019 - Mei 2022",
+    description: "Membuat Tampilan Pengaduan Masyarakat.",
   },
 ];
 
@@ -103,80 +103,120 @@ const Portfolio = ({ section }) => {
     }, 150);
   };
 
-  <section className="home d-flex align-items-center justify-content-between mb-5">
-  <div className="left-content">
-    <h1>Hello World, I'm</h1>
-    <h2 className="mb-3">Muhammad Rafa Prasetya</h2>
-    <h3 ref={typingRef} className="typing-effect mb-3"></h3>
-    <p>Welcome to my portfolio website</p>
-  </div>
-  <div className="right-content">
-    <img
-      src="/Foto.jpg"  // Path file gambar yang ada di folder public
-      alt="Profile"
-      className="img-fluid rounded-circle border border-dark"
-      style={{ width: "250px", height: "250px" }}
-    />
-  </div>
-</section>
+  useEffect(() => {
+    if (typingRef.current) {
+      animateTyping();
+    }
+  }, []);
 
-if (section === "about") {
-  return (
-    <section className="about-me mb-5">
-      <div className="card shadow-sm">
-        <div className="card-body">
-          <h2 className="text-center mb-4">About Me</h2>
-          <div className="row align-items-center">
-            <div className="col-md-5 text-center">
-              <img
-                src="/Foto.jpg"
-                alt="My Profile"
-                className="img-fluid rounded-circle shadow-sm"
-              />
-            </div>
-            <div className="col-md-7">
-              <h3>
-                <span className="typing-text">
-                  Hello, I'm <span className="name-typing">Muhammad Rafa Prasetya</span>
-                </span>
-              </h3>
-              <p className="mt-3">
-                I am a passionate web developer specializing in front-end and back-end technologies.
-              </p>
-              <p>
-                Besides coding, I thrive on solving complex problems, collaborating with teams, and exploring innovative technologies to make a meaningful impact.
-              </p>
-              <p>
-                I'm always learning new skills to stay at the cutting edge of web development, and I enjoy building projects that can benefit people and businesses.
-              </p>
+  // **Updated Home Section**
+  if (section === "home") {
+    return (
+      <section className="home d-flex align-items-center justify-content-between mb-5">
+        <div className="left-content">
+          <h1 className="display-4 fw-bold text-primary">Hello World, I'm</h1>
+          <h2 className="mb-3 text-secondary">Muhammad Rafa Prasetya</h2>
+          <h3 ref={typingRef} className="typing-effect mb-3 text-success"></h3>
+          <p className="text-muted">Welcome to my portfolio website</p>
+        </div>
+        <div className="right-content text-center">
+          <div className="photo-wrapper">
+            <img
+              src="/Foto.jpg" // Path file gambar yang ada di folder public
+              alt="Profile"
+              className="img-fluid profile-image"
+            />
+          </div>
+        </div>
+      </section>
+    );
+  }
 
-              {/* Tombol Download CV */}
-              <div className="text-center mt-4">
-                <a
-                  href="/cvats.pdf"
-                  download
-                  className="btn btn-primary"
-                  style={{ marginRight: "10px" }}
-                >
-                  Download CV
-                </a>
-                <a
-                  href="/cvats.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary"
-                >
-                  View CV
-                </a>
+  if (section === "about") {
+    return (
+      <section className="about-me mb-5">
+        <div className="card shadow-sm">
+          <div className="card-body">
+            <h2 className="text-center mb-4">About Me</h2>
+            <div className="row align-items-center">
+              {/* Kolom Kiri - Foto */}
+              <div className="col-md-6 text-center">
+                <div className="profile-image-wrapper">
+                  <img
+                    src="/test.jpg" // Sama dengan yang digunakan di Home
+                    alt="My Profile"
+                    className="profile-image"
+                  />
+                </div>
+              </div>
+
+              {/* Kolom Kanan - Teks */}
+<div className="col-md-6" style={{ marginLeft: '-85px' }}>
+  <h3>
+    <span className="typing-text">
+      Hello, I'm <span className="name-typing">Muhammad Rafa Prasetya</span>
+    </span>
+  </h3>
+  <p className="mt-3">
+    I am a passionate web developer specializing in front-end and back-end technologies.
+  </p>
+  <p>
+    Besides coding, I thrive on solving complex problems, collaborating with teams, and exploring innovative technologies to make a meaningful impact.
+  </p>
+  <p>
+    I'm always learning new skills to stay at the cutting edge of web development, and I enjoy building projects that can benefit people and businesses.
+  </p>
+
+
+
+                {/* Tombol Download CV */}
+                <div className="text-center mt-4">
+                  <a
+                    href="/cvats.pdf"
+                    download
+                    className="btn btn-primary"
+                    style={{ marginRight: "10px" }}
+                  >
+                    Download CV
+                  </a>
+                  <a
+                    href="/cvats.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary"
+                  >
+                    View CV
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  );
-}
-
+        {/* Bagian Experience */}
+        <section className="experience mt-5">
+          <h3 className="text-center mb-4">Experience</h3>
+          <div className="timeline">
+            {experiences.map((exp, index) => (
+              <div
+                className="timeline-item mb-4"
+                key={index}
+                ref={(el) => (timelineItemsRef.current[index] = el)}
+              >
+                <div className="timeline-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center">
+                  <i className="fas fa-briefcase"></i>
+                </div>
+                <div className="timeline-content p-3 shadow-sm rounded">
+                  <h5>{exp.title}</h5>
+                  <p className="text-muted mb-2">{exp.date}</p>
+                  <p>{exp.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </section>
+    );
+  }
 
   if (section === "skills") {
     return (
@@ -230,32 +270,6 @@ if (section === "about") {
 
                 {/* Deskripsi level */}
                 <small className="text-muted mt-2 d-block">{item.level}</small>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-    );
-  }
-
-  if (section === "experience") {
-    return (
-      <section className="experience mb-5">
-        <h3 className="text-center mb-4">Experience</h3>
-        <div className="timeline">
-          {experiences.map((exp, index) => (
-            <div
-              className="timeline-item mb-4"
-              key={index}
-              ref={(el) => (timelineItemsRef.current[index] = el)}
-            >
-              <div className="timeline-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center">
-                <i className="fas fa-briefcase"></i>
-              </div>
-              <div className="timeline-content p-3 shadow-sm rounded">
-                <h5>{exp.title}</h5>
-                <p className="text-muted mb-2">{exp.date}</p>
-                <p>{exp.description}</p>
               </div>
             </div>
           ))}
