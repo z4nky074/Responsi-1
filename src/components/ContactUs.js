@@ -66,10 +66,10 @@ const ContactUs = () => {
 
       {/* Tombol Sosial dengan Ikon */}
       <div className="social-buttons mt-4">
-        <a href="https://wa.me/6281234567890" className="btn btn-success btn-lg me-2" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/6289668547232" className="btn btn-success btn-lg me-2" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-whatsapp"></i> {/* Hanya Ikon */}
         </a>
-        <a href="https://instagram.com/yourusername" className="btn btn-outline-danger btn-lg me-2" target="_blank" rel="noopener noreferrer">
+        <a href="https://instagram.com/rrafapras74" className="btn btn-outline-danger btn-lg me-2" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-instagram"></i> {/* Hanya Ikon */}
         </a>
         <a href="https://tiktok.com/@mrapaaap74" className="btn btn-dark btn-lg me-2" target="_blank" rel="noopener noreferrer">
