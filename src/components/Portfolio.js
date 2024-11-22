@@ -4,10 +4,10 @@ import ContactUs from "./ContactUs"; // Impor komponen ContactUs
 
 // Data untuk modularisasi
 const skills = [
-  { skill: "HTML", level: "90%", icon: "fab fa-html5", color: "#E44D26" },
-  { skill: "CSS", level: "85%", icon: "fab fa-css3-alt", color: "#1572B6" },
-  { skill: "JavaScript", level: "80%", icon: "fab fa-js", color: "#F7DF1E" },
-  { skill: "React", level: "75%", icon: "fab fa-react", color: "#61DAFB" },
+  { skill: "HTML", level: "75%", icon: "fab fa-html5", color: "#E44D26" },
+  { skill: "CSS", level: "70%", icon: "fab fa-css3-alt", color: "#1572B6" },
+  { skill: "JavaScript", level: "55%", icon: "fab fa-js", color: "#F7DF1E" },
+  { skill: "React", level: "50%", icon: "fab fa-react", color: "#61DAFB" },
 ];
 
 const experiences = [
