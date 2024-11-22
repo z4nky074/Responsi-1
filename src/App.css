@@ -584,3 +584,34 @@ body, html {
   }
 }
 
+/* Animasi untuk bagian home */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home {
+  animation: fadeIn 1s ease-out; /* Fade in saat bagian home muncul */
+}
+
+/* Hapus animasi ketik pada teks */
+.typing-animation {
+  display: block; /* Menampilkan teks seperti biasa tanpa animasi */
+  border-right: none; /* Menghilangkan efek kursor */
+}
+
+/* Styling untuk tombol About Me */
+button {
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #007bff;
+}
+
