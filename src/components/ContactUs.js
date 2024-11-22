@@ -29,7 +29,7 @@ const ContactUs = () => {
 
   return (
     <section id="contact" className="contact-section text-center py-5">
-      <h3 style={{ fontSize: '1.75rem', fontWeight: '600' }}>Hubungi Saya</h3>
+      <h3 style={{ fontSize: '1.75rem', fontWeight: '600' }}>Contact Me</h3>
       <p>Silakan hubungi saya melalui platform berikut!</p>
 
       <form onSubmit={handleSubmit} className="mt-4">
