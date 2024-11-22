@@ -615,3 +615,19 @@ button:hover {
   background-color: #007bff;
 }
 
+/* Animasi untuk bagian About Me */
+@keyframes fadeInAboutMe {
+  from {
+    opacity: 0;
+    transform: translateY(50px); /* Posisi dimulai lebih bawah */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Posisi akhir di tempat semula */
+  }
+}
+
+.about-me {
+  animation: fadeInAboutMe 1s ease-out; /* 1 detik animasi dengan easing */
+}
+
