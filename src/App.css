@@ -322,6 +322,103 @@ footer p {
   outline: none !important; /* Menghapus outline pada semua elemen di navbar */
   box-shadow: none !important; /* Menghapus shadow pada semua elemen di navbar */
   border: none !important; /* Menghapus border pada semua elemen di navbar */
+  background-color: transparent !important; /* Membuat background transparan pada semua elemen */
+}
+
+/* Navbar utama yang tetap di atas */
+.navbar {
+  position: sticky; /* Membuat navbar tetap di atas saat di-scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Pastikan navbar di atas elemen lain */
+  background-color: transparent !important; /* Latar belakang navbar tetap transparan */
+  margin: 0; /* Menghilangkan margin */
+  padding: 0; /* Menghilangkan padding */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Menambahkan shadow tipis untuk efek mengambang */
+}
+
+/* Mengatur link navbar dalam keadaan aktif */
+.navbar .nav-link.active:focus {
+  outline: none !important; /* Menghapus outline pada link yang aktif */
+  box-shadow: none !important; /* Menghapus shadow */
+  border: none !important; /* Menghapus border */
+}
+
+/* Fokus dan hover pada link navbar */
+.navbar .nav-link:focus,
+.navbar .nav-link:hover {
+  background-color: transparent !important; /* Latar belakang tetap transparan */
+  color: #007bff !important; /* Warna teks tetap sesuai saat hover atau fokus */
+  outline: none !important; /* Menghapus outline */
+  box-shadow: none !important; /* Menghapus shadow */
+}
+
+/* Menjaga Navbar supaya responsif di berbagai ukuran layar */
+.navbar-toggler {
+  border: none; /* Menghilangkan border pada tombol toggler */
+}
+
+/* Jika ada margin atau padding di body atau html, reset agar navbar lebih dekat ke atas */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Mengatur navbar brand (nama/logo) supaya lebih rapi */
+.navbar-brand {
+  font-weight: bold;
+  color: #333 !important; /* Menyediakan warna default */
+  font-size: 1.5rem; /* Ukuran font lebih besar */
+  text-transform: uppercase; /* Mengubah teks menjadi huruf kapital semua */
+  letter-spacing: 1px; /* Memberikan sedikit jarak antar huruf */
+}
+
+/* Tampilan responsive navbar */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem; /* Menambahkan padding di navbar untuk tampilan mobile */
+  }
+  
+  .navbar-brand {
+    font-size: 1.25rem; /* Ukuran font sedikit lebih kecil pada perangkat kecil */
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #333; /* Mengubah warna ikon navbar */
+  }
+}
+
+
+/* Wrapper untuk mengatur efek lingkaran bercahaya */
+.profile-image-wrapper {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%; /* Membuat wrapper berbentuk bulat */
+  width: 320px; /* Ukuran lingkaran */
+  height: 320px; /* Ukuran lingkaran */
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.5), transparent); /* Efek cahaya */
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 50px rgba(255, 223, 0, 0.6); /* Efek bercahaya */
+  overflow: hidden; /* Agar gambar tidak keluar dari lingkaran */
+  margin: 0; /* Pastikan tidak ada margin tambahan */
+  padding: 0; /* Pastikan tidak ada padding tambahan */
+}
+
+/* Foto profil */
+.profile-image {
+  display: block; /* Menghilangkan whitespace bawaan gambar */
+  border-radius: 50%; /* Membuat gambar menjadi bulat */
+  width: 100%; /* Mengisi seluruh lebar wrapper */
+  height: 100%; /* Mengisi seluruh tinggi wrapper */
+  object-fit: cover; /* Memastikan gambar memenuhi lingkaran tanpa terdistorsi */
+  object-position: center; /* Memusatkan gambar */
+}
+
+/* Universal reset untuk navbar */
+.navbar * {
+  outline: none !important; /* Menghapus outline pada semua elemen di navbar */
+  box-shadow: none !important; /* Menghapus shadow pada semua elemen di navbar */
+  border: none !important; /* Menghapus border pada semua elemen di navbar */
   background-color: transparent !important;
 }
 
@@ -336,6 +433,15 @@ footer p {
   margin: 0; /* Pastikan tidak ada margin yang menambah ruang */
   padding: 0; /* Pastikan tidak ada padding tambahan */
   border-radius: 0px; /* Mengatur border agar tetap kotak (persegi panjang) */
+}
+
+/* Navbar brand (nama/logo) */
+.navbar-brand {
+  font-weight: normal; /* Mengembalikan ke font-weight normal */
+  color: #333 !important; /* Warna teks default */
+  font-size: 1.25rem; /* Ukuran font tetap */
+  text-transform: none; /* Tidak ada perubahan pada huruf kapital */
+  letter-spacing: 0; /* Menghilangkan jarak antar huruf */
 }
 
 /* Menambahkan background persegi panjang pada navbar di bagian tertentu */
@@ -385,28 +491,110 @@ body, html {
   border-radius: 0px; /* Pastikan bentuknya tetap persegi panjang */
 }
 
-
-/* Wrapper untuk mengatur efek lingkaran bercahaya */
-.profile-image-wrapper {
-  position: relative;
-  display: inline-block;
-  border-radius: 50%; /* Membuat wrapper berbentuk bulat */
-  width: 320px; /* Ukuran lingkaran */
-  height: 320px; /* Ukuran lingkaran */
-  background: radial-gradient(circle, rgba(255, 215, 0, 0.5), transparent); /* Efek cahaya */
-  box-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 50px rgba(255, 223, 0, 0.6); /* Efek bercahaya */
-  overflow: hidden; /* Agar gambar tidak keluar dari lingkaran */
-  margin: 0; /* Pastikan tidak ada margin tambahan */
-  padding: 0; /* Pastikan tidak ada padding tambahan */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
-/* Foto profil */
-.profile-image {
-  display: block; /* Menghilangkan whitespace bawaan gambar */
-  border-radius: 50%; /* Membuat gambar menjadi bulat */
-  width: 100%; /* Mengisi seluruh lebar wrapper */
-  height: 100%; /* Mengisi seluruh tinggi wrapper */
-  object-fit: cover; /* Memastikan gambar memenuhi lingkaran tanpa terdistorsi */
-  object-position: center; /* Memusatkan gambar */
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.animate-popup {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in-out; /* Animasi saat modal muncul */
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 90%;
+  text-align: center;
+  animation: scaleIn 0.5s ease-out; /* Animasi saat konten modal muncul */
+}
+
+.zoomed-img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block; /* Memastikan gambar berada di tengah */
+  margin: 0 auto; /* Gambar ditengah secara horizontal */
+  animation: zoomIn 0.5s ease-out; /* Animasi saat gambar muncul */
+}
+
+/* Animasi Fade-in untuk overlay modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animasi Scale-in untuk konten modal */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Animasi Zoom-in untuk gambar */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  color: #000;
+  cursor: pointer;
+  z-index: 1100; /* Memastikan close button tetap di atas */
+}
