@@ -8,7 +8,6 @@ const ContactUs = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Cek jika email atau pesan kosong
     if (!email || !message) {
       Swal.fire({
         icon: 'error',
@@ -18,14 +17,12 @@ const ContactUs = () => {
       return;
     }
 
-    // Simulasi pengiriman email atau pesan
     Swal.fire({
       icon: 'success',
       title: 'Pesan Terkirim!',
       text: 'Kami telah menerima pesan Anda dan akan segera merespon.',
     });
 
-    // Reset form setelah pengiriman
     setEmail('');
     setMessage('');
   };
@@ -35,7 +32,6 @@ const ContactUs = () => {
       <h3 style={{ fontSize: '1.75rem', fontWeight: '600' }}>Hubungi Saya</h3>
       <p>Silakan hubungi saya melalui platform berikut!</p>
 
-      {/* Form untuk mengirim email dan pesan */}
       <form onSubmit={handleSubmit} className="mt-4">
         <div className="mb-3">
           <input
@@ -64,22 +60,21 @@ const ContactUs = () => {
         </button>
       </form>
 
-      {/* Tombol Sosial dengan Ikon */}
       <div className="social-buttons mt-4">
         <a href="https://wa.me/6289668547232" className="btn btn-success btn-lg me-2" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-whatsapp"></i> {/* Hanya Ikon */}
+          <i className="bi bi-whatsapp"></i>
         </a>
         <a href="https://instagram.com/rrafapras74" className="btn btn-outline-danger btn-lg me-2" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-instagram"></i> {/* Hanya Ikon */}
+          <i className="bi bi-instagram"></i>
         </a>
         <a href="https://tiktok.com/@mrapaaap74" className="btn btn-dark btn-lg me-2" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-tiktok"></i> {/* Hanya Ikon */}
+          <i className="bi bi-tiktok"></i>
         </a>
         <a href="https://github.com/z4nky074" className="btn btn-dark btn-lg me-2" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-github"></i> {/* Hanya Ikon */}
+          <i className="bi bi-github"></i>
         </a>
         <a href="mailto:rafa24052005@gmail.com" className="btn btn-outline-primary btn-lg" target="_blank" rel="noopener noreferrer">
-          <i className="fas fa-envelope"></i> {/* Hanya Ikon */}
+          <i className="bi bi-envelope"></i>
         </a>
       </div>
     </section>
@@ -87,4 +82,3 @@ const ContactUs = () => {
 };
 
 export default ContactUs;
-    
