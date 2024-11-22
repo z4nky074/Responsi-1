@@ -188,15 +188,28 @@ footer p {
   text-transform: uppercase;
 }
 
-/* Skill Bars */
+/* Skill Bars Container */
 .skill-bar-container {
   position: relative;
-  overflow: hidden;
+  height: 20px; /* Atur tinggi container */
+  background-color: #e9ecef; /* Warna latar belakang container */
+  border-radius: 10px; /* Membuat sudut melengkung */
+  overflow: hidden; /* Sembunyikan elemen yang melampaui container */
+  margin-bottom: 10px; /* Jarak antar skill bars */
 }
 
+/* Skill Bar */
 .skill-bar {
-  height: 100%;
-  transition: width 0.5s ease-in-out;
+  height: 100%; /* Isi penuh tinggi container */
+  background-color: #007bff; /* Warna skill bar */
+  border-radius: 10px; /* Melengkung sesuai container */
+  width: 0; /* Mulai dengan lebar 0% */
+  transition: width 0.5s ease-in-out; /* Animasi perubahan lebar */
+}
+
+/* Skill Bar Aktif */
+.skill-bar.animate {
+  width: var(--skill-width); /* Nilai lebar ditentukan secara dinamis */
 }
 
 .timeline {
