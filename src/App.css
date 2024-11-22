@@ -325,19 +325,28 @@ footer p {
   background-color: transparent !important;
 }
 
-/* Navbar utama yang tetap di atas */
+/* Navbar utama yang tetap di atas dengan background persegi panjang */
 .navbar {
   position: sticky; /* Membuat navbar tetap di atas saat di-scroll */
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000; /* Pastikan navbar di atas elemen lain */
-  background-color: transparent !important;/* Latar belakang navbar tetap putih */
+  background-color: #f8f9fa !important; /* Latar belakang navbar dengan warna terang */
   margin: 0; /* Pastikan tidak ada margin yang menambah ruang */
   padding: 0; /* Pastikan tidak ada padding tambahan */
+  border-radius: 0px; /* Mengatur border agar tetap kotak (persegi panjang) */
 }
 
-/* Mengatur link navbar dalam keadaan aktif */
+/* Menambahkan background persegi panjang pada navbar di bagian tertentu */
+.navbar .nav-link {
+  position: relative;
+}
+
+.navbar .nav-item {
+  padding: 0 15px; /* Menambahkan ruang antar item navbar */
+}
+
 .navbar .nav-link.active:focus {
   outline: none !important; /* Menghapus outline pada link yang aktif */
   box-shadow: none !important; /* Menghapus shadow */
@@ -363,3 +372,41 @@ body, html {
   margin: 0;
   padding: 0;
 }
+
+/* Menambahkan efek persegi panjang pada navbar */
+.navbar {
+  background-color: #ffffff; /* Latar belakang putih untuk navbar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan ringan pada navbar */
+}
+
+/* Styling untuk navbar yang memanjang */
+.navbar .nav-link {
+  padding: 10px 20px; /* Memberikan padding untuk memastikan navbar tidak terlalu rapat */
+  border-radius: 0px; /* Pastikan bentuknya tetap persegi panjang */
+}
+
+
+/* Wrapper untuk mengatur efek lingkaran bercahaya */
+.profile-image-wrapper {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%; /* Membuat wrapper berbentuk bulat */
+  width: 320px; /* Ukuran lingkaran */
+  height: 320px; /* Ukuran lingkaran */
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.5), transparent); /* Efek cahaya */
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 50px rgba(255, 223, 0, 0.6); /* Efek bercahaya */
+  overflow: hidden; /* Agar gambar tidak keluar dari lingkaran */
+  margin: 0; /* Pastikan tidak ada margin tambahan */
+  padding: 0; /* Pastikan tidak ada padding tambahan */
+}
+
+/* Foto profil */
+.profile-image {
+  display: block; /* Menghilangkan whitespace bawaan gambar */
+  border-radius: 50%; /* Membuat gambar menjadi bulat */
+  width: 100%; /* Mengisi seluruh lebar wrapper */
+  height: 100%; /* Mengisi seluruh tinggi wrapper */
+  object-fit: cover; /* Memastikan gambar memenuhi lingkaran tanpa terdistorsi */
+  object-position: center; /* Memusatkan gambar */
+}
+
