@@ -120,42 +120,63 @@ const Portfolio = ({ section }) => {
   </div>
 </section>
 
-  if (section === "about") {
-    return (
-      <section className="about-me mb-5">
-        <div className="card shadow-sm">
-          <div className="card-body">
-            <h2 className="text-center mb-4">About Me</h2>
-            <div className="row align-items-center">
-              <div className="col-md-5 text-center">
-                <img
-                  src="/Foto.jpg"
-                  alt="My Profile"
-                  className="img-fluid rounded-circle shadow-sm"
-                />
-              </div>
-              <div className="col-md-7">
-                <h3>
-                  <span className="typing-text">
-                    Hello, I'm <span className="name-typing">Muhammad Rafa Prasetya</span>
-                  </span>
-                </h3>
-                <p className="mt-3">
-                  I am a passionate web developer specializing in front-end and back-end technologies.
-                </p>
-                <p>
-                  Besides coding, I thrive on solving complex problems, collaborating with teams, and exploring innovative technologies to make a meaningful impact.
-                </p>
-                <p>
-                  I'm always learning new skills to stay at the cutting edge of web development, and I enjoy building projects that can benefit people and businesses.
-                </p>
+if (section === "about") {
+  return (
+    <section className="about-me mb-5">
+      <div className="card shadow-sm">
+        <div className="card-body">
+          <h2 className="text-center mb-4">About Me</h2>
+          <div className="row align-items-center">
+            <div className="col-md-5 text-center">
+              <img
+                src="/Foto.jpg"
+                alt="My Profile"
+                className="img-fluid rounded-circle shadow-sm"
+              />
+            </div>
+            <div className="col-md-7">
+              <h3>
+                <span className="typing-text">
+                  Hello, I'm <span className="name-typing">Muhammad Rafa Prasetya</span>
+                </span>
+              </h3>
+              <p className="mt-3">
+                I am a passionate web developer specializing in front-end and back-end technologies.
+              </p>
+              <p>
+                Besides coding, I thrive on solving complex problems, collaborating with teams, and exploring innovative technologies to make a meaningful impact.
+              </p>
+              <p>
+                I'm always learning new skills to stay at the cutting edge of web development, and I enjoy building projects that can benefit people and businesses.
+              </p>
+
+              {/* Tombol Download CV */}
+              <div className="text-center mt-4">
+                <a
+                  href="/cvats.pdf"
+                  download
+                  className="btn btn-primary"
+                  style={{ marginRight: "10px" }}
+                >
+                  Download CV
+                </a>
+                <a
+                  href="/cvats.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                >
+                  View CV
+                </a>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    );
-  }
+      </div>
+    </section>
+  );
+}
+
 
   if (section === "skills") {
     return (
