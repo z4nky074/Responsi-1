@@ -359,10 +359,21 @@ footer p {
   border: none; /* Menghilangkan border pada tombol toggler */
 }
 
-/* Jika ada margin atau padding di body atau html, reset agar navbar lebih dekat ke atas */
+/* Menghilangkan margin atau padding ekstra di body dan html */
 body, html {
   margin: 0;
   padding: 0;
+}
+
+/* Menyesuaikan ukuran navbar di layar kecil */
+@media (max-width: 767px) {
+  .navbar-brand {
+    font-size: 1.2rem; /* Ukuran font brand sedikit lebih kecil di layar kecil */
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1rem; /* Ukuran font link lebih kecil di layar kecil */
+  }
 }
 
 /* Mengatur navbar brand (nama/logo) supaya lebih rapi */
@@ -528,35 +539,57 @@ body, html {
   }
 }
 
+/* Modal overlay */
 .modal-overlay {
-  position: fixed;
+  position: fixed; /* Pastikan overlay berada di atas seluruh halaman */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5); /* Latar belakang transparan gelap */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
-  animation: fadeIn 0.5s ease-in-out; /* Animasi saat modal muncul */
+  z-index: 1050; /* Pastikan modal berada di atas navbar */
 }
 
+/* Konten modal */
 .modal-content {
-  background: #fff;
+  background-color: white;
   padding: 20px;
   border-radius: 8px;
-  max-width: 90%;
+  position: relative;
+  z-index: 1060; /* Pastikan konten modal ada di atas overlay */
+  max-width: 90%; /* Membatasi lebar konten modal */
+  max-height: 90%; /* Membatasi tinggi konten modal */
+  overflow: hidden; /* Menghindari konten keluar dari batas modal */
   text-align: center;
-  animation: scaleIn 0.5s ease-out; /* Animasi saat konten modal muncul */
+  display: flex;
+  justify-content: center; /* Mengatur konten modal agar terpusat */
+  align-items: center;
+  animation: scaleIn 0.3s ease-out; /* Animasi saat konten modal muncul */
 }
 
+/* Gambar zoomed */
 .zoomed-img {
   max-width: 100%;
   max-height: 100%;
+  margin-bottom: 20px;
+  object-fit: contain; /* Menjaga rasio aspek gambar */
+  animation: zoomIn 0.3s ease-out; /* Animasi saat gambar muncul */
   display: block; /* Memastikan gambar berada di tengah */
   margin: 0 auto; /* Gambar ditengah secara horizontal */
-  animation: zoomIn 0.5s ease-out; /* Animasi saat gambar muncul */
+}
+
+/* Tombol close */
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #000;
+  cursor: pointer;
+  z-index: 1070; /* Tombol close berada di atas gambar */
 }
 
 /* Animasi Fade-in untuk overlay modal */
@@ -572,7 +605,7 @@ body, html {
 /* Animasi Scale-in untuk konten modal */
 @keyframes scaleIn {
   from {
-    transform: scale(0.5);
+    transform: scale(0.8);
   }
   to {
     transform: scale(1);
@@ -582,19 +615,9 @@ body, html {
 /* Animasi Zoom-in untuk gambar */
 @keyframes zoomIn {
   from {
-    transform: scale(0.5);
+    transform: scale(0.8);
   }
   to {
     transform: scale(1);
   }
-}
-
-.close-modal {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 2rem;
-  color: #000;
-  cursor: pointer;
-  z-index: 1100; /* Memastikan close button tetap di atas */
 }
