@@ -1,0 +1,365 @@
+/* Gaya untuk body agar lebih bersih */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Bagian Home */
+.home {
+  display: flex;
+  align-items: flex-start; /* Posisi lebih ke atas */
+  justify-content: center;
+  height: 75vh; /* Lebih kecil untuk mendekatkan ke atas */
+  text-align: center;
+  padding-top: 20px; /* Jaga agar tetap ada sedikit ruang */
+}
+
+.left-content {
+  flex: 1;
+  padding: 10px;
+}
+
+.right-content {
+  flex: 1;
+}
+
+.home img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+
+/* Header dengan gambar latar belakang */
+header {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://via.placeholder.com/1920x600'); /* Ganti dengan gambar */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Gaya untuk judul header */
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Subtitle */
+header p {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+/* Animasi untuk tombol */
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Gaya untuk gambar pada proyek */
+.project-image {
+  width: 100%; /* Gambar akan mengambil lebar penuh dari container */
+  height: auto; /* Menjaga proporsi gambar agar tidak terdistorsi */
+  max-width: 100%; /* Pastikan gambar tidak melebihi lebar container */
+  border-radius: 8px; /* Sedikit membulatkan sudut gambar */
+}
+
+/* Form input */
+input[type='text'] {
+  padding: 12px;
+  width: 100%;
+  margin-right: 10px;
+  border-radius: 30px;
+  border: 2px solid #ddd;
+  transition: border-color 0.3s;
+  font-size: 1rem;
+}
+
+input[type='text']:focus {
+  border-color: #007bff;
+}
+
+/* Daftar proyek */
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+ul li {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+ul li:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+ul li button {
+  background-color: #dc3545;
+  border: none;
+  border-radius: 50%;
+  padding: 5px 10px;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+ul li button:hover {
+  background-color: #c82333;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  input[type='text'] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Portfolio Section */
+.portfolio-section {
+  padding: 50px 0;
+  background-color: #f8f9fa;
+}
+
+.portfolio-section h2, 
+.portfolio-section h3 {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Skill Bars */
+.skill-bar-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-bar {
+  height: 100%;
+  transition: width 0.5s ease-in-out;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 20px;
+}
+
+.timeline-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline-content {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  border-left: 3px solid #007bff;
+}
+
+/* Animasi timeline */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animasi skill bars */
+@keyframes skillAnimation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--skill-width); /* Menggunakan nilai skill yang dinamis */
+  }
+}
+
+.skill-bar {
+  height: 12px;
+  background-color: #007bff;
+  border-radius: 10px;
+  width: 0%; /* Mulai dengan lebar 0% */
+  transition: width 2s ease-out;
+}
+
+/* Kelas yang ditambahkan saat skill bar muncul di layar */
+.skill-bar.animate {
+  animation: skillAnimation 2s ease-out forwards;
+}
+
+/* Animasi timeline item muncul dari bawah */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Mulai dari bawah */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Berhenti di posisi semula */
+  }
+}
+
+/* Gaya dasar untuk item timeline */
+.timeline-item {
+  opacity: 0; /* Mulai dengan opasitas 0 */
+  transform: translateY(20px); /* Mulai dari bawah */
+  animation: fadeInUp 0.8s ease-out forwards; /* Animasi timeline */
+}
+
+/* Kelas yang ditambahkan saat timeline item muncul di layar */
+.timeline-item.animate {
+  animation: fadeInUp 1s ease-out forwards; /* Menambahkan animasi */
+}
+
+
+/* Typing Text Effect */
+.typing-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 3s steps(40) infinite, blink-caret 0.75s step-end infinite;
+  border-right: 3px solid;
+  vertical-align: middle;
+  line-height: 1.2;
+  transform: translateY(-2px); /* Coba atur nilai ini agar teks naik sedikit */
+}
+
+.name-typing {
+  color: #007bff; /* Warna biru untuk nama */
+  display: inline-block;
+}
+
+@keyframes typing {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+@keyframes blink-caret {
+  50% { border-color: transparent; }
+}
+
+/* Universal reset untuk navbar */
+.navbar * {
+  outline: none !important; /* Menghapus outline pada semua elemen di navbar */
+  box-shadow: none !important; /* Menghapus shadow pada semua elemen di navbar */
+  border: none !important; /* Menghapus border pada semua elemen di navbar */
+  background-color: transparent !important;
+}
+
+/* Navbar utama yang tetap di atas */
+.navbar {
+  position: sticky; /* Membuat navbar tetap di atas saat di-scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Pastikan navbar di atas elemen lain */
+  background-color: transparent !important;/* Latar belakang navbar tetap putih */
+  margin: 0; /* Pastikan tidak ada margin yang menambah ruang */
+  padding: 0; /* Pastikan tidak ada padding tambahan */
+}
+
+/* Mengatur link navbar dalam keadaan aktif */
+.navbar .nav-link.active:focus {
+  outline: none !important; /* Menghapus outline pada link yang aktif */
+  box-shadow: none !important; /* Menghapus shadow */
+  border: none !important; /* Menghapus border */
+}
+
+/* Fokus dan hover pada link navbar */
+.navbar .nav-link:focus,
+.navbar .nav-link:hover {
+  background-color: transparent !important; /* Latar belakang tetap transparan */
+  color: #007bff !important; /* Warna teks tetap sesuai saat hover atau fokus */
+  outline: none !important; /* Menghapus outline */
+  box-shadow: none !important; /* Menghapus shadow */
+}
+
+/* Menjaga Navbar supaya responsif di berbagai ukuran layar */
+.navbar-toggler {
+  border: none; /* Menghilangkan border pada tombol toggler */
+}
+
+/* Jika ada margin atau padding di body atau html, reset agar navbar lebih dekat ke atas */
+body, html {
+  margin: 0;
+  padding: 0;
+}
