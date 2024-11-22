@@ -151,23 +151,21 @@ const Portfolio = ({ section }) => {
               </div>
 
               {/* Kolom Kanan - Teks */}
-<div className="col-md-6" style={{ marginLeft: '-85px' }}>
-  <h3>
-    <span className="typing-text">
-      Hello, I'm <span className="name-typing">Muhammad Rafa Prasetya</span>
-    </span>
-  </h3>
-  <p className="mt-3">
-    I am a passionate web developer specializing in front-end and back-end technologies.
-  </p>
-  <p>
-    Besides coding, I thrive on solving complex problems, collaborating with teams, and exploring innovative technologies to make a meaningful impact.
-  </p>
-  <p>
-    I'm always learning new skills to stay at the cutting edge of web development, and I enjoy building projects that can benefit people and businesses.
-  </p>
-
-
+              <div className="col-md-6" style={{ marginLeft: '-85px' }}>
+                <h3>
+                  <span className="typing-text">
+                    Hello, I'm <span className="name-typing">Muhammad Rafa Prasetya</span>
+                  </span>
+                </h3>
+                <p className="mt-3">
+                  Saya adalah mahasiswa yang sedang mendalami pengembangan web, khususnya di bagian front-end.
+                </p>
+                <p>
+                  Selain belajar coding, saya senang memecahkan masalah, bekerja sama dalam tim, dan terus mengeksplorasi teknologi terbaru untuk menciptakan dampak yang positif.
+                </p>
+                <p>
+                  Saya selalu berusaha untuk terus belajar dan mengembangkan kemampuan agar bisa mengikuti perkembangan dunia web yang terus berubah.
+                </p>
 
                 {/* Tombol Download CV */}
                 <div className="text-center mt-4">
