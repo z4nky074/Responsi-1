@@ -7,6 +7,11 @@ import "./App.css"; // Pastikan file CSS terhubung
 function App() {
   const [activeSection, setActiveSection] = useState("home"); // State untuk menentukan bagian aktif
 
+  // Fungsi untuk navigasi langsung ke bagian tertentu
+  const handleNavigate = (section) => {
+    setActiveSection(section);
+  };
+
   // Komponen utama
   return (
     <div className="App">
@@ -27,6 +32,13 @@ function App() {
                 <p className="typing-animation">
                   Welcome to my portfolio website!
                 </p>
+                {/* Tombol About Me */}
+                <button 
+                  className="btn btn-primary mt-3"
+                  onClick={() => handleNavigate("about")}
+                >
+                  About Me
+                </button>
               </div>
 
               {/* Kolom Kanan - Foto profil dengan frame bercahaya */}
