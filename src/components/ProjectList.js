@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Swal from 'sweetalert2';
 import '../App.css'; // Mengimpor file CSS dari luar folder components
 
@@ -10,11 +10,11 @@ const ProjectList = () => {
     },
     {
       image: '/images/airnb.jpg',
-      description: 'Dan untuk Projek ini saya membuat web dengan khas masing" mahasiswa dengan meniru web airnb', // Deskripsi default untuk kotak 2
+      description: 'Dan untuk Projek ini saya membuat web dengan khas masing" mahasiswa dengan meniru web airnb',
     },
     {
       image: '/images/rapsshop.jpg',
-      description: 'Untuk Projek ini saya hanya membuat sebuah tampilan yang sudah di berikan tamplate oleh asprak', // Deskripsi default untuk kotak 3
+      description: 'Untuk Projek ini saya hanya membuat sebuah tampilan yang sudah di berikan tamplate oleh asprak',
     },
   ]);
 
@@ -23,6 +23,30 @@ const ProjectList = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [uploadMode, setUploadMode] = useState('url'); // Default ke URL
   const [modalProject, setModalProject] = useState(null); // State untuk menyimpan proyek yang diklik untuk modal
+
+  const timelineRef = useRef([]); // Menyimpan referensi ke elemen timeline
+
+  useEffect(() => {
+    // IntersectionObserver untuk timeline
+    const timelineObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    timelineRef.current.forEach((item) => {
+      if (item) {
+        timelineObserver.observe(item);
+      }
+    });
+
+    return () => timelineObserver.disconnect();
+  }, []);
 
   const handleAddOrUpdate = (e) => {
     e.preventDefault();
@@ -179,11 +203,30 @@ const ProjectList = () => {
         </div>
       </section>
 
-      {/* Modal untuk gambar zoom */}
+      <section className="timeline-section">
+        <h4 className="text-center mb-4">My Timeline</h4>
+        <div className="timeline">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="timeline-item"
+              ref={(el) => (timelineRef.current[index] = el)}
+            >
+              <div className="timeline-icon"></div>
+              <div className="timeline-content">
+                <h5>{project.description}</h5>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {modalProject && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content">
-            <span className="close-modal" onClick={closeModal}>&times;</span>
+            <span className="close-modal" onClick={closeModal}>
+              &times;
+            </span>
             <img
               src={modalProject.image}
               alt="Zoomed"
