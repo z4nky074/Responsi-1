@@ -4,10 +4,10 @@ import ContactUs from "./ContactUs"; // Impor komponen ContactUs
 
 // Data untuk modularisasi
 const skills = [
-  { skill: "HTML", level: "75%", icon: "fab fa-html5", color: "#E44D26" },
-  { skill: "CSS", level: "70%", icon: "fab fa-css3-alt", color: "#1572B6" },
-  { skill: "JavaScript", level: "55%", icon: "fab fa-js", color: "#F7DF1E" },
-  { skill: "React", level: "50%", icon: "fab fa-react", color: "#61DAFB" },
+  { skill: "HTML", level: "75%", icon: "fab fa-html5", color: "#000000" },
+  { skill: "CSS", level: "70%", icon: "fab fa-css3-alt", color: "#000000" },
+  { skill: "JavaScript", level: "55%", icon: "fab fa-js", color: "#000000" },
+  { skill: "React", level: "50%", icon: "fab fa-react", color: "#000000" },
 ];
 
 const experiences = [
@@ -78,17 +78,10 @@ const Portfolio = ({ section }) => {
     };
   }, []);
 
-  const getSkillBarColor = (level) => {
-    const percentage = parseInt(level);
-    if (percentage <= 60) {
-      return "#E44D26"; // Merah
-    } else if (percentage <= 80) {
-      return "#F7DF1E"; // Kuning
-    } else {
-      return "#4CAF50"; // Hijau
-    }
+  const getSkillBarColor = () => {
+    return "#000000"; // Hitam
   };
-
+  
   const animateTyping = () => {
     const typingText = "Project Responsi";
     let index = 0;
@@ -168,24 +161,18 @@ const Portfolio = ({ section }) => {
                 </p>
 
                 {/* Tombol Download CV */}
-                <div className="text-center mt-4">
-                  <a
-                    href="/cvats.pdf"
-                    download
-                    className="btn btn-primary"
-                    style={{ marginRight: "10px" }}
-                  >
-                    Download CV
-                  </a>
-                  <a
-                    href="/cvats.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-secondary"
-                  >
-                    View CV
-                  </a>
-                </div>
+                {/* Tombol Download CV */}
+<div className="text-center mt-4">
+  <a
+    href="/cvats.pdf"
+    download
+    className="btn btn-primary"
+    style={{ marginRight: "10px" }}
+  >
+    Download CV
+  </a>
+</div>
+
               </div>
             </div>
           </div>
