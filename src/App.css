@@ -382,20 +382,18 @@ body, html {
   }
 }
 
-
-/* Wrapper untuk mengatur efek lingkaran bercahaya */
+/* Wrapper untuk mengatur efek lingkaran tanpa cahaya kuning */
 .profile-image-wrapper {
   position: relative;
   display: inline-block;
   border-radius: 50%; /* Membuat wrapper berbentuk bulat */
   width: 320px; /* Ukuran lingkaran */
   height: 320px; /* Ukuran lingkaran */
-  background: radial-gradient(circle, rgba(255, 215, 0, 0.5), transparent); /* Efek cahaya */
-  box-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 50px rgba(255, 223, 0, 0.6); /* Efek bercahaya */
   overflow: hidden; /* Agar gambar tidak keluar dari lingkaran */
   margin: 0; /* Pastikan tidak ada margin tambahan */
   padding: 0; /* Pastikan tidak ada padding tambahan */
 }
+
 
 /* Foto profil */
 .profile-image {
@@ -651,3 +649,39 @@ button:hover {
   animation: fadeInAboutMe 1s ease-out; /* 1 detik animasi dengan easing */
 }
 
+.contact-form {
+  /* Menjaga form tetap pada posisi atas */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.social-buttons {
+  display: flex; /* Mengatur tombol secara mendatar */
+  justify-content: center; /* Menempatkan tombol di tengah */
+  gap: 15px; /* Memberikan jarak antar tombol */
+  margin-top: 30px; /* Memberikan jarak dari tombol Kirim Pesan */
+}
+
+.social-buttons a {
+  background-color: #000; /* Latar belakang hitam */
+  border: 2px solid #fff; /* Garis putih */
+  color: #fff; /* Ikon putih */
+  border-radius: 50%; /* Membuat tombol berbentuk lingkaran */
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-buttons a:hover {
+  background-color: #fff; /* Latar belakang putih saat di-hover */
+  color: #000; /* Ikon hitam saat di-hover */
+}
+
+.social-buttons a i {
+  font-size: 1.5rem;
+}
