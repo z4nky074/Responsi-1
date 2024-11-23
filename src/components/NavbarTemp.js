@@ -9,7 +9,7 @@ const Navbar = ({ setActiveSection }) => {
           href="#"
           onClick={() => setActiveSection("home")}
         >
-          Hi Rapaaaa
+          Portfolio
         </a>
         <button
           className="navbar-toggler"
