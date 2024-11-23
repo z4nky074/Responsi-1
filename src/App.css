@@ -8,14 +8,19 @@ body {
   line-height: 1.6;
 }
 
+/* Tambahkan font family */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;700&display=swap');
+
 /* Bagian Home */
 .home {
   display: flex;
-  align-items: flex-start; /* Posisi lebih ke atas */
+  align-items: flex-start;
   justify-content: center;
-  height: 75vh; /* Lebih kecil untuk mendekatkan ke atas */
+  height: 75vh;
   text-align: center;
-  padding-top: 20px; /* Jaga agar tetap ada sedikit ruang */
+  padding-top: 20px;
+  font-family: 'Poppins', sans-serif; /* Font yang menarik */
+  color: #333; /* Warna teks */
 }
 
 .left-content {
@@ -30,7 +35,22 @@ body {
 .home img {
   max-width: 100%;
   height: auto;
-  border-radius: 50%;
+  border-radius: 10px;
+}
+
+/* Tambahkan gaya untuk teks */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #000000; /* Warna lebih tajam */
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 300;
+  color: #555; /* Warna abu-abu lembut */
 }
 
 /* Header dengan gambar latar belakang */
