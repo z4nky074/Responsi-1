@@ -61,22 +61,48 @@ const ContactUs = () => {
       </form>
 
       <div className="social-buttons mt-4">
-        <a href="https://wa.me/6289668547232" className="btn btn-success btn-lg me-2" target="_blank" rel="noopener noreferrer">
-          <i className="bi bi-whatsapp"></i>
-        </a>
-        <a href="https://instagram.com/rrafapras74" className="btn btn-outline-danger btn-lg me-2" target="_blank" rel="noopener noreferrer">
-          <i className="bi bi-instagram"></i>
-        </a>
-        <a href="https://tiktok.com/@mrapaaap74" className="btn btn-dark btn-lg me-2" target="_blank" rel="noopener noreferrer">
-          <i className="bi bi-tiktok"></i>
-        </a>
-        <a href="https://github.com/z4nky074" className="btn btn-dark btn-lg me-2" target="_blank" rel="noopener noreferrer">
-          <i className="bi bi-github"></i>
-        </a>
-        <a href="mailto:rafa24052005@gmail.com" className="btn btn-outline-primary btn-lg" target="_blank" rel="noopener noreferrer">
-          <i className="bi bi-envelope"></i>
-        </a>
-      </div>
+  <a
+    href="https://wa.me/6289668547232"
+    className="btn"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i className="bi bi-whatsapp"></i>
+  </a>
+  <a
+    href="https://instagram.com/rrafapras74"
+    className="btn"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i className="bi bi-instagram"></i>
+  </a>
+  <a
+    href="https://tiktok.com/@mrapaaap74"
+    className="btn"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i className="bi bi-tiktok"></i>
+  </a>
+  <a
+    href="https://github.com/z4nky074"
+    className="btn"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i className="bi bi-github"></i>
+  </a>
+  <a
+    href="mailto:rafa24052005@gmail.com"
+    className="btn"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i className="bi bi-envelope"></i>
+  </a>
+</div>
+
     </section>
   );
 };
