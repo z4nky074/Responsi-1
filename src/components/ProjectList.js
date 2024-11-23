@@ -24,9 +24,11 @@ const ProjectList = () => {
   const [uploadMode, setUploadMode] = useState('url'); // Default ke URL
   const [modalProject, setModalProject] = useState(null); // State untuk menyimpan proyek yang diklik untuk modal
 
+  const projectCardsRef = useRef([]);
+
   useEffect(() => {
-    // IntersectionObserver untuk timeline
-    const timelineObserver = new IntersectionObserver(
+    // IntersectionObserver untuk card proyek
+    const projectObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -37,7 +39,20 @@ const ProjectList = () => {
       { threshold: 0.5 }
     );
 
-    return () => timelineObserver.disconnect();
+    // Mengamati setiap card proyek
+    projectCardsRef.current.forEach((card) => {
+      if (card) {
+        projectObserver.observe(card);
+      }
+    });
+
+    return () => {
+      projectCardsRef.current.forEach((card) => {
+        if (card) {
+          projectObserver.unobserve(card);
+        }
+      });
+    };
   }, []);
 
   const handleAddOrUpdate = (e) => {
@@ -134,12 +149,10 @@ const ProjectList = () => {
     setEditIndex(null);
   };
 
-  // Fungsi untuk membuka modal gambar yang lebih besar
   const openModal = (project) => {
     setModalProject(project);
   };
 
-  // Fungsi untuk menutup modal
   const closeModal = () => {
     setModalProject(null);
   };
@@ -151,7 +164,11 @@ const ProjectList = () => {
 
         <div className="row justify-content-center">
           {projects.map((project, index) => (
-            <div key={index} className="col-md-4 mb-4">
+            <div
+              key={index}
+              className="col-md-4 mb-4"
+              ref={(el) => (projectCardsRef.current[index] = el)}
+            >
               <div className="card">
                 <div className="card-body text-center">
                   <img
@@ -159,21 +176,15 @@ const ProjectList = () => {
                     className="img-fluid rounded mb-3"
                     alt="Project"
                     style={{ maxWidth: '100%', maxHeight: '400px', cursor: 'pointer' }}
-                    onClick={() => openModal(project)} // Klik gambar untuk membuka modal
+                    onClick={() => openModal(project)}
                   />
                   <p className="card-text" style={{ fontSize: '1rem' }}>
                     {project.description || 'Belum ada deskripsi'}
                   </p>
-                  <button
-                    className="btn btn-warning me-2"
-                    onClick={() => handleEdit(index)}
-                  >
+                  <button className="btn btn-warning me-2" onClick={() => handleEdit(index)}>
                     Edit
                   </button>
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => handleDelete(index)}
-                  >
+                  <button className="btn btn-danger" onClick={() => handleDelete(index)}>
                     Hapus
                   </button>
                 </div>
